@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<depedencies>
+	<!-- Ant -->
+	<depedency
+		id="ant"
+		archive="http://ftp.uni-erlangen.de/pub/mirrors/apache/ant/binaries/apache-ant-${version}-bin.tar.gz"
+		version="1.6.5"
+		baseTarget="depedencies/lib">
+		<extract
+			name="apache-ant-${version}/lib/ant.jar"/>
+		<extract
+			name="apache-ant-${version}/lib/ant-launcher.jar"/>
+		<extract
+			name="apache-ant-${version}/lib/ant-apache-bsf.jar"/>
+		<extract
+			name="apache-ant-${version}/lib/ant-nodeps.jar"/>
+		<extract
+			name="apache-ant-${version}/lib/ant-trax.jar"/>
+	</depedency>
+	
+	<!--  Tomcat archive  -->
+	<depedency
+		id="tomcat"
+		archive="http://www.apache.de/dist/jakarta/tomcat-5/v${version}/bin/jakarta-tomcat-${version}.tar.gz"
+		version="5.5.9"
+		baseTarget="depedencies/lib">
+		<extract
+			name="jakarta-tomcat-${version}/bin/bootstrap.jar"/>
+		<extract
+			name="jakarta-tomcat-${version}/bin/commons-logging-api.jar"/>
+		<extract
+			name="jakarta-tomcat-${version}/common/i18n/*.jar"/>
+		<extract
+			name="jakarta-tomcat-${version}/common/lib/*.jar"/>
+		<extract
+			name="jakarta-tomcat-${version}/server/lib/*.jar"/>
+	</depedency>
+	
+	
+</depedencies>

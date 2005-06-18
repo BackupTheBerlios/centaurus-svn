@@ -1,0 +1,61 @@
+<project
+	name="Centaurus-Platform"
+	basedir=".."
+	default="">
+	
+	
+    <!-- ================================= 
+          target: help              
+         ================================= -->
+    <target 
+    	name="help" 
+    	description="--> Shows the help">
+    	<echo>
+    	--------------------------------------------------------------
+
+    		Centaurus-Platform Build-Script 
+    		http://centaurus.sourceforge.net/
+
+    	--------------------------------------------------------------
+    	Using ${ant.version}
+    	Build file ${ant.file}
+    	Java-Version: ${java.vendor} ${java.vm.name} 
+    					${java.vm.info} ${java.version}
+    	--------------------------------------------------------------
+    	These are the most common build targets.
+    	You can also invoke them directly; see build.xml for more info.
+
+		make_release ------------ make complete release
+    	make_full_test ---------- make test installation
+    	make_clean -------------- remove all temp files and dirs
+    	cvs --------------------- anonymous checkout from centaurus repository
+    	depedencies ------------- Resolves external depedencies
+    	</echo>
+    </target>
+
+
+	<!-- ================================= 
+	      target: depedencies              
+	     ================================= -->
+	<target 
+		name="depedencies" 
+		description="--> Retrieves and extracts external archives">
+
+		<path id="depedenciesTask.classpath">
+			<fileset dir="ROOT/lib">
+				<include name="depedenciesmanager.jar" />
+			</fileset>
+		</path>
+		
+		<taskdef 
+			name="depedencies"
+		    classname="de.centaurus.ant.tasks.DepedenciesManagerTask"
+		    classpathref="depedenciesTask.classpath">
+		</taskdef>
+		    	
+		<depedencies 
+			depedenciesFile="ROOT/depedencies.xml"
+			tempdir="${java.io.tmpdir}/depedenciesmanager"/>
+	</target>
+
+</project>
