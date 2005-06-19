@@ -37,5 +37,50 @@
 			name="jakarta-tomcat-${version}/server/lib/*.jar"/>
 	</depedency>
 	
+	<!-- Java Service Wrapper -->
+	<depedency
+		id="wrapper_linux"
+		archive="http://mesh.dl.sourceforge.net/sourceforge/wrapper/wrapper_linux_${version}.tar.gz"
+		version="3.1.2"
+		baseTarget="depedencies/lib">
+		<extract
+			name="wrapper_linux_${version}/lib/wrapper.jar"
+			renameTo="wrapper_linux.jar"/>
+		<extract
+			name="wrapper_linux_${version}/bin/wrapper"
+			renameTo="wrapper_linux"
+			target="depedencies/lib/native"/>
+	</depedency>
 	
+	<depedency
+		id="wrapper_win32"
+		archive="http://mesh.dl.sourceforge.net/sourceforge/wrapper/wrapper_win32_${version}.zip"
+		version="3.1.2"
+		baseTarget="depedencies/lib">
+		<extract
+			name="wrapper_win32_${version}/lib/wrapper.jar"
+			renameTo="wrapper_win32.jar"/>
+		<extract
+			name="wrapper_win32_${version}/lib/wrapper.dll"
+			renameTo="wrapper_win32.dll"
+			target="depedencies/lib/native"/>
+		<extract
+			name="wrapper_win32_${version}/bin/wrapper.exe"
+			renameTo="wrapper_win32.exe"
+			target="depedencies/lib/native"/>
+	</depedency>
+
+	<depedency
+		id="wrapper_solaris"
+		archive="http://mesh.dl.sourceforge.net/sourceforge/wrapper/wrapper_solaris_${version}.tar.gz"
+		version="3.1.2"
+		baseTarget="depedencies/lib">
+		<extract
+			name="wrapper_solaris_${version}/lib/wrapper.jar"
+			renameTo="wrapper_solaris.jar"/>
+		<extract
+			name="wrapper_solaris_${version}/bin/wrapper"
+			renameTo="wrapper_solaris"
+			target="depedencies/lib/native"/>
+	</depedency>
 </depedencies>
